@@ -106,7 +106,7 @@ def setText(aString):
 
 def proxy_ok():
     try:
-        my_proxies={"http":"http://10.8.146.73:1080","https":"https://10.8.146.73:1080"}
+        my_proxies={"http":"http://127.0.0.1:","https":"https://127.0.0.1:"}
         req = requests.get("http://httpbin.org/ip",timeout=10,proxies=my_proxies)
         if(req.status_code ==200):
             print ("proxy success")
