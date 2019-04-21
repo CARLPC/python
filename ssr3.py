@@ -19,16 +19,16 @@ import time
 def decode_wwei(image,hds):
     x=     random.choice(hds)
     try:
-        req = requests.get("http://jiema.wwei.cn/",timeout=20,headers=x)
+        req = requests.get("https://jiema.wwei.cn/",timeout=20,headers=x)
         pattern=re.compile(r'(?<=token=).*?(?=")')
         matchObj = re.findall(pattern,req.text)
-        pageurl="http://jiema.wwei.cn/fileupload.html?op=jiema&token="+ matchObj[0]
+        pageurl="https://jiema.wwei.cn/fileupload.html?op=jiema&token="+ matchObj[0]
         files={'id':(None,'WU_FILE_0'),'name':(None,'qq.png'),'type':(None,'image/png'),   \
                'lastModifiedDate':(None,u'Sat Feb 02 2019 09:44:18 GMT+0800 (中国标准时间)'),\
                'size':(None,'436'),'file':('qq.png',image,'image/png')}
         x['Accept']='*/*'
-        x['Origin']='http://jiema.wwei.cn'
-        x['Referer']='http://jiema.wwei.cn'
+        x['Origin']='https://jiema.wwei.cn'
+        x['Referer']='https://jiema.wwei.cn'
         x['Connection']='Keep-alive'
         x['Access-Sign']='*'
         x['Accept-Encoding']='gzip, deflate'
