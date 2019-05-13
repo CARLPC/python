@@ -53,7 +53,7 @@ def decode_wwei(image,hds):
 
 def get_png_code(hds):
     try:
-        req = requests.get("https://a.freess.biz",timeout=3,headers=random.choice(hds))
+        req = requests.get("https://b.freess.biz",timeout=3,headers=random.choice(hds))
         pattern=re.compile(r'(?<=href="data:image/png;base64,).*?(?=")')
         matchObj = re.findall(pattern,req.text)
         if len(matchObj)<2 :
